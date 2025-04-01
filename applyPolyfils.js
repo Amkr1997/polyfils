@@ -16,7 +16,9 @@ Function.prototype.myApply = function (obj = {}, args) {
   }
 
   obj.fn = this;
-  obj.fn(...args);
+  const result = obj.fn(...args);
+  delete obj.fn; // Need to delete the temporary function after execution from memory.
+  return result;
 };
 
 printDetails.myApply(obj1, ["Singh", 23]);
