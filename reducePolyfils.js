@@ -9,7 +9,7 @@ Array.prototype.myReduce = function (cb, initialValue) {
     initialIndex = 1;
   }
 
-  for (let i = 0; i < this.length; i++) {
+  for (let i = initialIndex; i < this.length; i++) {
     acc = cb(acc, this[i], i, this);
   }
 
